@@ -20,7 +20,7 @@ func GenerateMessage(
 			return body
 		}
 
-		return fmt.Sprintf("%s\n%s\n\n%s", sender, subject, body)
+		return fmt.Sprintf("%s\n%s\n\n%s", subject, sender, body)
 	}
 
 	if ignoreBody || body == "" {
@@ -34,5 +34,5 @@ func GenerateMessage(
 		return body
 	}
 
-	return fmt.Sprintf("# %s\n> %s\n\n%s", sender, subject, body)
+	return fmt.Sprintf("# %s\n> %s\n\n%s", subject, sender, body)
 }
