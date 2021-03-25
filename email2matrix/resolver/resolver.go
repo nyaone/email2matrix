@@ -1,7 +1,7 @@
 package resolver
 
 import (
-	"devture-email2matrix/email2matrix/configuration"
+	"nyaone-email2matrix/email2matrix/configuration"
 )
 
 type ConfigurationBackedMailboxMappingInfoProvider struct {

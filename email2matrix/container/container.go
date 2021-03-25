@@ -1,9 +1,9 @@
 package container
 
 import (
-	"devture-email2matrix/email2matrix/configuration"
-	"devture-email2matrix/email2matrix/resolver"
-	"devture-email2matrix/email2matrix/smtp"
+	"nyaone-email2matrix/email2matrix/configuration"
+	"nyaone-email2matrix/email2matrix/resolver"
+	"nyaone-email2matrix/email2matrix/smtp"
 	"fmt"
 
 	"github.com/euskadi31/go-service"

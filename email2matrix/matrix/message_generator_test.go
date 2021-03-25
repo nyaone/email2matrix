@@ -20,6 +20,7 @@ func TestGenerate(t *testing.T) {
 	tests := []testData{
 		testData{
 			subject:        "test",
+			sender:         "sender@test.local",
 			body:           "content",
 			ignoreSubject:  false,
 			ignoreBody:     false,
@@ -28,6 +29,7 @@ func TestGenerate(t *testing.T) {
 		},
 		testData{
 			subject:        "test",
+			sender:         "sender@test.local",
 			body:           "",
 			ignoreSubject:  false,
 			ignoreBody:     false,
@@ -36,6 +38,7 @@ func TestGenerate(t *testing.T) {
 		},
 		testData{
 			subject:        "test",
+			sender:         "sender@test.local",
 			body:           "content",
 			ignoreSubject:  false,
 			ignoreBody:     true,
@@ -44,6 +47,7 @@ func TestGenerate(t *testing.T) {
 		},
 		testData{
 			subject:        "test",
+			sender:         "sender@test.local",
 			body:           "content",
 			ignoreSubject:  false,
 			ignoreBody:     true,
@@ -52,6 +56,7 @@ func TestGenerate(t *testing.T) {
 		},
 		testData{
 			subject:        "test",
+			sender:         "sender@test.local",
 			body:           "content",
 			ignoreSubject:  true,
 			ignoreBody:     false,
@@ -60,6 +65,7 @@ func TestGenerate(t *testing.T) {
 		},
 		testData{
 			subject:        "test",
+			sender:         "sender@test.local",
 			body:           "content",
 			ignoreSubject:  true,
 			ignoreBody:     false,
@@ -68,6 +74,7 @@ func TestGenerate(t *testing.T) {
 		},
 		testData{
 			subject:        "test",
+			sender:         "sender@test.local",
 			body:           "content",
 			ignoreSubject:  false,
 			ignoreBody:     false,
@@ -82,7 +89,7 @@ func TestGenerate(t *testing.T) {
 		t.Run(fmt.Sprintf("test-%d", idx), func(t *testing.T) {
 			t.Parallel()
 
-			output := GenerateMessage(test.subject, test.body, test.ignoreSubject, test.ignoreBody, test.skipMarkdown)
+			output := GenerateMessage(test.subject, test.sender, test.body, test.ignoreSubject, test.ignoreBody, test.skipMarkdown)
 
 			if output != test.expectedOutput {
 				t.Errorf("Expected output `%s`, but got `%s`", test.expectedOutput, output)

@@ -1,8 +1,8 @@
 package matrix
 
 import (
-	"devture-email2matrix/email2matrix/mime"
-	"devture-email2matrix/email2matrix/resolver"
+	"nyaone-email2matrix/email2matrix/mime"
+	"nyaone-email2matrix/email2matrix/resolver"
 	"errors"
 	"fmt"
 	"strings"
@@ -14,13 +14,14 @@ import (
 )
 
 func Relay(envelope *mail.Envelope, mappingInfo resolver.MailboxMappingInfo) (string, error) {
-	subject, body, err := mime.ExtractContentFromEmail(envelope.NewReader())
+	sender, subject, body, err := mime.ExtractContentFromEmail(envelope.NewReader())
 	if err != nil {
 		return "", fmt.Errorf("Failed to parse email: %s", err)
 	}
 
 	messagePlainOrMarkdown := GenerateMessage(
 		subject,
+		sender,
 		body,
 		mappingInfo.IgnoreSubject,
 		mappingInfo.IgnoreBody,

@@ -43,7 +43,7 @@ func TestParser(t *testing.T) {
 			}
 			defer f.Close()
 
-			subject, content, err := ExtractContentFromEmail(f)
+			sender, subject, content, err := ExtractContentFromEmail(f)
 			if err != nil {
 				t.Error(err)
 				return

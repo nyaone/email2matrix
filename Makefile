@@ -58,7 +58,7 @@ test: ## Runs the tests locally (no containers)
 	go test ./...
 
 build-container-image: ## Builds a Docker container image
-	docker build -t devture/email2matrix:latest -f etc/docker/Dockerfile .
+	docker build -t nyaone/email2matrix:latest -f etc/docker/Dockerfile .
 
 run-in-container: build-container-image ## Runs email2matrix in a container
 	docker run \
@@ -68,7 +68,7 @@ run-in-container: build-container-image ## Runs email2matrix in a container
 	-p 40025:2525 \
 	--mount type=bind,src=`pwd`/config.json,dst=/config.json,ro \
 	--network=email2matrix_default \
-	devture/email2matrix:latest
+	nyaone/email2matrix:latest
 
 send-sample-email-to-test-mailbox: ## Sends a sample email to email2matrix
 	docker run \

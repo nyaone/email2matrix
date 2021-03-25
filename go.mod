@@ -1,4 +1,4 @@
-module devture-email2matrix
+module nyaone-email2matrix
 
 go 1.12
 

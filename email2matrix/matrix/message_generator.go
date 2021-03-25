@@ -4,6 +4,7 @@ import "fmt"
 
 func GenerateMessage(
 	subject string,
+	sender string,
 	body string,
 	ignoreSubject, ignoreBody, skipMarkdown bool,
 ) string {
@@ -12,26 +13,26 @@ func GenerateMessage(
 			if subject == "" {
 				return ""
 			}
-			return fmt.Sprintf("%s", subject)
+			return fmt.Sprintf("%s\n%s", subject, sender)
 		}
 
 		if ignoreSubject || subject == "" {
 			return body
 		}
 
-		return fmt.Sprintf("%s\n\n%s", subject, body)
+		return fmt.Sprintf("%s\n%s\n\n%s", sender, subject, body)
 	}
 
 	if ignoreBody || body == "" {
 		if subject == "" {
 			return ""
 		}
-		return fmt.Sprintf("# %s", subject)
+		return fmt.Sprintf("# %s\n> %s", subject, sender)
 	}
 
 	if ignoreSubject || subject == "" {
 		return body
 	}
 
-	return fmt.Sprintf("# %s\n\n%s", subject, body)
+	return fmt.Sprintf("# %s\n> %s\n\n%s", sender, subject, body)
 }

@@ -1,8 +1,8 @@
 package smtp
 
 import (
-	"devture-email2matrix/email2matrix/matrix"
-	"devture-email2matrix/email2matrix/resolver"
+	"nyaone-email2matrix/email2matrix/matrix"
+	"nyaone-email2matrix/email2matrix/resolver"
 	"errors"
 	"fmt"
 

@@ -19,8 +19,8 @@
 package main
 
 import (
-	"devture-email2matrix/email2matrix/configuration"
-	"devture-email2matrix/email2matrix/container"
+	"nyaone-email2matrix/email2matrix/configuration"
+	"nyaone-email2matrix/email2matrix/container"
 	"flag"
 	"os"
 	"os/signal"
