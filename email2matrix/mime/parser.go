@@ -7,7 +7,7 @@ import (
 	"github.com/jhillyerd/enmime"
 )
 
-func ExtractContentFromEmail(reader io.Reader) ( /*subject*/ string /*body*/, string, error) {
+func ExtractContentFromEmail(reader io.Reader) ( string, string , string, error) {
 	envelope, err := enmime.ReadEnvelope(reader)
 	if err != nil {
 		return "", "", "", err
